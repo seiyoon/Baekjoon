@@ -25,3 +25,13 @@ def bfs(v):
 
 bfs(1)
 print(sum(visited)-1)   # 방문한 컴퓨터 개수 - 1번 컴퓨터
+
+'''
+dfs 방식으로도 풀어보기
+
+def dfs(v):
+    visited[v]=True
+    for i in graph[v]:
+        if not visited[i]:
+            dfs(i)
+'''
