@@ -32,5 +32,4 @@ for s in str:
             stack.pop()
 while stack:
     result += stack.pop()
-
 print(result)
