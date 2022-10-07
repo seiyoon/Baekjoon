@@ -27,7 +27,7 @@ bfs(1)
 print(sum(visited)-1)   # 방문한 컴퓨터 개수 - 1번 컴퓨터
 
 '''
-dfs 방식으로도 풀어보기
+dfs 방식으로 풀어보기
 
 def dfs(v):
     visited[v]=True
