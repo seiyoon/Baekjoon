@@ -16,7 +16,6 @@ def bfs(x, y):
                 if miro[nx][ny] == 1:
                     miro[nx][ny] = miro[x][y]+1
                     q.append((nx, ny))
-
     return miro[n-1][m-1]
 
 n, m = map(int, input().split())
