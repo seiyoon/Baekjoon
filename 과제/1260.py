@@ -23,7 +23,6 @@ def bfs(v):
                 q.append(i)
                 visited[i]=True
 
-
 n, m, v = map(int, input().split())
 graph = [[] for i in range(n+1)]
 visited = [0] * (n+1)
