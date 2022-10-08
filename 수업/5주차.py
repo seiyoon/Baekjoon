@@ -1,51 +1,19 @@
-# 계산기만들기
+# 주식투자
+# ICPC 2015
+
+from collections import deque
 
 t = int(input())
-for i in range(t):
-    n = int(input())
-    i_s = list(input().split())
-    stack = []
-    result = ''
-    rlist = []
-    print(i_s)
-    for s in i_s:
-        if s.isdigit():
-            result += s
-            result += ','
-        else:
-            if s == '(':
-                stack.append(s)
-            elif s == '*' or s == '/':
-                while stack and (stack[-1] == '*' or stack[-1] == '/'):
-                    result += stack.pop()
-                    result += ','
-                stack.append(s)
-            elif s == '+' or s == '-':
-                while stack and (stack[-1] != '('):
-                    result += stack.pop()
-                    result += ','
-                stack.append(s)
-            elif s == ')':
-                while stack and stack[-1] != '(':
-                    result += stack.pop()
-                    result += ','
-                stack.pop()
-    while stack:
-        result += stack.pop()
-    print(result)
-    rlist = list(result.split(','))
+for _ in range(t):
+    d = int(input())
+    dl = deque((map(int, input().split()))) # deque로 설정
+    b=0
+    r=0
+    while dl:
+        a = dl.pop() # a는 dl의 가장 마지막 원소
+        if a>b: # a가 b보다 크면
+            b = a # b는 a임
+            continue
+        r += b-a # b가 a보다 크면 바로 r에 더함
 
-    stack=[]
-    print(rlist)
-    for j in rlist:
-        if j == '+':
-            stack.append(stack.pop() + stack.pop())
-        elif j == '-':
-            top = stack.pop()
-            stack.append(stack.pop() - top)
-        elif j == '*':
-            stack.append(stack.pop() * stack.pop())
-        else:
-            stack.append(int(j))
-
-    print(stack.pop())
+    print(r)
