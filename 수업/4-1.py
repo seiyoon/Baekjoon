@@ -1,6 +1,7 @@
 # 사다리타기
 
 t = int(input())
+
 for _ in range(t):
     n, m, d = map(int, input().split())
     ladder = []
