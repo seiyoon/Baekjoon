@@ -4,6 +4,7 @@
 from collections import deque
 
 t = int(input())
+
 for _ in range(t):
     d = int(input())
     dl = deque((map(int, input().split()))) # deque로 설정
