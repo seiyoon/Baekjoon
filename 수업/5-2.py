@@ -8,6 +8,7 @@ for i in range(t):
     result = ''
     rlist = []
     print(i_s)
+    
     for s in i_s:
         if s.isdigit():
             result += s
@@ -47,5 +48,5 @@ for i in range(t):
             stack.append(stack.pop() * stack.pop())
         else:
             stack.append(int(j))
-
+            
     print(stack.pop())
